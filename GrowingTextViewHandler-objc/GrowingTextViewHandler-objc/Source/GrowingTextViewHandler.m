@@ -110,6 +110,7 @@ static NSInteger kMaximumNumberOfLines = INT_MAX;
   if (animated == true) {
     [UIView animateWithDuration:self.animationDuration
                      animations:^{
+      [self.delegate textViewHandlerWillChangeHeightConstraint:self.heightConstraint];
       [self.growingTextView.superview layoutIfNeeded];
     }
                      completion:nil];

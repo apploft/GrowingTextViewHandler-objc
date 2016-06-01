@@ -13,8 +13,13 @@
  An NSObject subclass to handle resizing of UITextView as the user types in. The textview resizes as long as the number of lines lies between specified minimum and maximum number of lines. This class calculates total size of UITextView text and adjusts the height constraint of that UITextView. You need to provide height constraint to UITextView.
  */
 
+@protocol GrowingTextViewHandlerDelegate <NSObject>
+- (void)textViewHandlerWillChangeHeightConstraint:(NSLayoutConstraint *)heightConstraint;
+@end
+
 @interface GrowingTextViewHandler : NSObject
 
+@property (nonatomic, weak) id<GrowingTextViewHandlerDelegate> delegate;
 @property (nonatomic, strong) UITextView *growingTextView;
 @property (nonatomic, assign) CGFloat animationDuration;
 
