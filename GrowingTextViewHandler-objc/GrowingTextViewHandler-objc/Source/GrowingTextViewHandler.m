@@ -9,6 +9,7 @@
 #import "GrowingTextViewHandler.h"
 
 static CGFloat kDefaultAnimationDuration = 0.5;
+static CGFloat kDefaultHeightMargin = 0.0;
 static NSInteger kMinimumNumberOfLines = 1;
 static NSInteger kMaximumNumberOfLines = INT_MAX;
 
@@ -31,6 +32,7 @@ static NSInteger kMaximumNumberOfLines = INT_MAX;
     self.growingTextView = textView;
     self.heightConstraint = heightConstraint;
     self.animationDuration = kDefaultAnimationDuration;
+    self.heightMargin = kDefaultHeightMargin;
     [self updateMinimumNumberOfLines:kMinimumNumberOfLines andMaximumNumberOfLine:kMaximumNumberOfLines];
   }
   return self;
@@ -106,7 +108,7 @@ static NSInteger kMaximumNumberOfLines = INT_MAX;
 }
 
 - (void)updateVerticalAlignmentWithHeight:(CGFloat)height animated:(BOOL)animated {
-  self.heightConstraint.constant = height;
+  self.heightConstraint.constant = height + self.heightMargin;
   if (animated == true) {
     [UIView animateWithDuration:self.animationDuration
                      animations:^{

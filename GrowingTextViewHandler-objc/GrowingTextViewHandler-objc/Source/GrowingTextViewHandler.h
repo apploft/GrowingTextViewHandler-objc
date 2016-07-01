@@ -22,6 +22,7 @@
 @property (nonatomic, weak) id<GrowingTextViewHandlerDelegate> delegate;
 @property (nonatomic, strong) UITextView *growingTextView;
 @property (nonatomic, assign) CGFloat animationDuration;
+@property (nonatomic, assign) CGFloat heightMargin;
 
 /** Returns an instance of GrowingTextViewHandler
  @param textView The UITextView which needs to be resized
