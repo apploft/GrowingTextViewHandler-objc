@@ -26,13 +26,14 @@ static NSInteger kMaximumNumberOfLines = INT_MAX;
 @implementation GrowingTextViewHandler
 
 - (id)initWithTextView:(UITextView *)textView
-  withHeightConstraint:(NSLayoutConstraint *)heightConstraint {
+  withHeightConstraint:(NSLayoutConstraint *)heightConstraint
+       andHeightMargin:(CGFloat)heightMargin {
   self = [super init];
   if (self) {
     self.growingTextView = textView;
     self.heightConstraint = heightConstraint;
+    self.heightMargin = heightMargin;
     self.animationDuration = kDefaultAnimationDuration;
-    self.heightMargin = kDefaultHeightMargin;
     [self updateMinimumNumberOfLines:kMinimumNumberOfLines andMaximumNumberOfLine:kMaximumNumberOfLines];
   }
   return self;

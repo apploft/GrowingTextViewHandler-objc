@@ -28,7 +28,7 @@
  @param textView The UITextView which needs to be resized
  @param heightConstraint The height constraint of textview
  */
-- (id)initWithTextView:(UITextView *)textView withHeightConstraint:(NSLayoutConstraint *)heightConstraint;
+- (id)initWithTextView:(UITextView *)textView withHeightConstraint:(NSLayoutConstraint *)heightConstraint andHeightMargin:(CGFloat)heightMargin;
 
 /** Limits resizing of UITextView between minimumNumberOfLines and maximumNumberOfLines
  @param minimumNumberOfLines Lower limit on number of lines
